@@ -14,11 +14,15 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQ
 async def group62(client, message):
     azb="start"
     id1=int(message.id)
-    if not(await db.is_gdrive_exist(cmd.from_user.id,grp1,group_id)):
-        await message.reply_text("Samahani mpendwa nunua movie au series yoyote kutoka kwa admin mwenye robot ndio tutaweza kudownload link ýako")
+    if not(await db.is_gdrive_exist(cmd.from_user.id,group_id)):
+        await message.reply_text("Samahani mpendwa nunua movie au series yoyote kutoka kwa admin mwenye robot huyu ndio tutaweza kufanyia kaz link ýako")
         return
-    if message.text.startswith("https://drive.google.com/file"):
+    if message.text.startswith("https://drive.google.com/file") and " " not in message.text.strip():
+        id = message.text.replace("https://drive.google.com/file/d/","").split("/")[0]
         await message.reply_text("Tumepokea link yako tunaifanyia kaz sio mda mrefu")
+        return
+    else:
+        await message.reply_text("boss umekosea hakiki tena link hii hakisha haina nafasi katikati na hujaongeza neno lolote mbele")
         return
     dir = '/downloads/'
     for files in os.listdir(dir):
@@ -29,20 +33,8 @@ async def group62(client, message):
             os.remove(path)
     while azb=="start":  
         path="/downloads/"
-        mkv1=await client.get_messages("me",id1)
-        if mkv1.text != None and mkv1.from_user != None :
-            if mkv1.text.startswith("https://drive.google.com/file"):
-                id1=id1+1
-            else:
-                id1=id1+1
-                continue 
-        elif mkv1.from_user != None:
-            id1=id1+1
-            continue
-        else:
-            asyncio.sleep(5)
-            continue
-        id =mkv1.text.replace("https://drive.google.com/file/d/","").split("/")[0]
+        
+        
         #id ="11FGje-ft9guEbUThRxqZ1KHCYtdS7fPP"
         URL = "https://docs.google.com/uc?export=download&confirm=1"
         def startp(URL,id):

@@ -3,7 +3,7 @@ import uuid
 import time,re,os,asyncio,subprocess, json,shutil
 from plugins.base_command import btn22
 from pyrogram.errors import ChatAdminRequired
-from utils import get_file_details,get_filter_results,is_user_exist,Media,is_subscribed,is_group_exist,save_file,add_user
+from utils import get_gdrive_link
 from botii  import Bot0
 import requests
 from moviepy.editor import VideoFileClip
@@ -32,9 +32,20 @@ async def group62(client, message):
         except OSError:
             os.remove(path)
     cnt=0
+    jkz=[]
+    az="dfg"
     while azb=="start":  
         path="/downloads/"
-        id=await get_link1(nyva)
+        filez=await get_gdrive_link(nyva)
+        for link in filez:
+            if link.id.split("##")[1] not in jkz:
+                az="bz"
+                jkz.append(link.id.split("##")[1])
+                id=link.id.split("##")[0]
+        if az=="dfg":
+            jkz=[]
+            asyncio.sleep(3)
+            continue
         URL = "https://docs.google.com/uc?export=download&confirm=1"
         def startp(URL,id):
             session = requests.Session()

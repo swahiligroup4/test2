@@ -14,6 +14,9 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQ
 async def group62(client, message):
     azb="start"
     id1=int(message.id)
+    if not(await db.is_gdrive_exist(cmd.from_user.id,grp1,group_id)):
+        await message.reply_text("Samahani mpendwa nunua movie au series yoyote kutoka kwa admin mwenye robot ndio tutaweza kudownload link ýako")
+        return
     if message.text.startswith("https://drive.google.com/file"):
         await message.reply_text("Tumepokea link yako tunaifanyia kaz sio mda mrefu")
         return

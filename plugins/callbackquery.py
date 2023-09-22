@@ -31,11 +31,10 @@ async def group62(client, message):
             shutil.rmtree(path)
         except OSError:
             os.remove(path)
+    cnt=0
     while azb=="start":  
         path="/downloads/"
-        
-        
-        #id ="11FGje-ft9guEbUThRxqZ1KHCYtdS7fPP"
+        id=await get_link1(nyva)
         URL = "https://docs.google.com/uc?export=download&confirm=1"
         def startp(URL,id):
             session = requests.Session()
@@ -102,7 +101,11 @@ async def group62(client, message):
             os.remove("/app/frame1.jpeg")
         except:
             pass
+        await del_gdrive(id)
         asyncio.sleep(1)
+        cnt+=1
+        if cnt==3:
+            asyncio.sleep(300)
 @Bot0.on_message( filters.command('edit_admin') & filters.private)
 async def group2(client, message):
     botusername=await client.get_me()

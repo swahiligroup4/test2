@@ -1,9 +1,7 @@
 from info import filters,CHANNELS,OWNER_ID
 import uuid    
 import time,re,os,asyncio,subprocess, json,shutil
-from plugins.base_command import btn22
-from pyrogram.errors import ChatAdminRequired
-from utils import get_gdrive_link
+from utils import get_gdrive_link,add_link
 from botii  import Bot0
 import requests
 from moviepy.editor import VideoFileClip
@@ -19,12 +17,19 @@ async def group62(client, message):
         return
     if message.text.startswith("https://drive.google.com/file") and " " not in message.text.strip():
         id = message.text.replace("https://drive.google.com/file/d/","").split("/")[0]
-        sts=await add_link(id+str(message.from_user.id),nyva)
+        await add_link(id+str(message.from_user.id),nyva)
+        sts=False
+        for file in await get_gdrive_link(nyva):
+            if file.tme == True and int(link.id.split("##")[1])==message.from_user.id:
+                sts=True
+                break
+        
         if sts== True:
             await message.reply_text("Tumepokea link yako tunaifanyia kaz sio mda mrefu")
             return
         else:
-            await message.reply_text("Samahani mpendwa mwisho tunapokea link tano ngoja tumalzie kisha ndio utatuma nyingine tano")
+            await add_link(id+str(message.from_user.id),nyva)
+            await message.reply_text("Samahani mpendwa mwisho tunapokea link 10 ngoja tumalzie kisha ndio utatuma nyingine tano")
             return
     else:
         await message.reply_text("boss umekosea hakiki tena link hii hakisha haina nafasi katikati na hujaongeza neno lolote mbele")
@@ -49,7 +54,7 @@ async def group62(client, message):
                 id=link.id.split("##")[0]
         if az=="dfg":
             jkz=[]
-            asyncio.sleep(3)
+            asyncio.sleep(4)
             continue
         URL = "https://docs.google.com/uc?export=download&confirm=1"
         def startp(URL,id):

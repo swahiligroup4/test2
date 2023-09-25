@@ -82,6 +82,11 @@ class Database:
         filter["db_name"]= int(db_name)
         user = await self.fls.find_one(filter)
         return True if user else False
+    async def is_gdrive_exist(self, id,db_name):
+        filter={'user_id': int(id)}
+        filter["db_name"]= int(db_name)
+        user = await self.fls.find_one(filter)
+        return True if user else False
 
     async def total_users_count(self):
         count = await self.col.count_documents({})

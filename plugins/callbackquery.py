@@ -7,7 +7,17 @@ import requests
 from moviepy.editor import VideoFileClip
 from plugins.database import db
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
+import logging
+logger = logging.getLogger(__name__)
 
+@Bot0.on_message(filters.command('logger') & filters.owner)
+async def log_file(bot, message):
+    """Send log file"""
+    try:
+        await message.reply_document('TelegramBot.log')
+    except Exception as e:
+        await message.reply(str(e))
+        
 @Bot0.on_message( (filters.regex('^gdrive.*') | filters.regex('^https://drive.google.com/file.*')) & filters.private )
 async def group62(client, message):
     azb="start"

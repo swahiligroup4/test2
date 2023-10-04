@@ -1,4 +1,4 @@
-0import logging
+import logging
 import logging.config
 # Get logging configurations
 logging.config.fileConfig('logging.conf')

@@ -6,7 +6,7 @@ logging.getLogger().setLevel(logging.ERROR)
 
 from pyrogram import Client, __version__,compose
 from pyrogram.raw.all import layer
-from utils import Media
+from utils import User
 from info import SESSION, API_ID, API_HASH, BOT_TOKEN
 
 class Bot(Client):
@@ -22,7 +22,7 @@ class Bot(Client):
         )
     async def start(self):
         await super().start()
-        await Media.ensure_indexes()    
+        await User.ensure_indexes()    
     async def stop(self, *args):
         await super().stop()
         
@@ -39,7 +39,7 @@ class Bot1(Client):
         )
     async def start(self):
         await super().start()
-        await Media.ensure_indexes() 
+        await User.ensure_indexes() 
     async def stop(self, *args):
         await super().stop() 
 class Bot2(Client):
@@ -55,7 +55,7 @@ class Bot2(Client):
         )
     async def start(self):
         await super().start()
-        await Media.ensure_indexes()    
+        await User.ensure_indexes()    
     async def stop(self, *args):
         await super().stop()
 
@@ -72,7 +72,7 @@ class Bot3(Client):
         )
     async def start(self):
         await super().start()
-        await Media.ensure_indexes()    
+        await User.ensure_indexes()    
     async def stop(self, *args):
         await super().stop()
 class Bot4(Client):
@@ -88,7 +88,7 @@ class Bot4(Client):
         )
     async def start(self):
         await super().start()
-        await Media.ensure_indexes()    
+        await User.ensure_indexes()    
     async def stop(self, *args):
         await super().stop()
 class Bot5(Client):
@@ -104,7 +104,7 @@ class Bot5(Client):
         )
     async def start(self):
         await super().start()
-        await Media.ensure_indexes()    
+        await User.ensure_indexes()    
     async def stop(self, *args):
         await super().stop()
 class Bot6(Client):
@@ -120,7 +120,7 @@ class Bot6(Client):
         )
     async def start(self):
         await super().start()
-        await Media.ensure_indexes()    
+        await User.ensure_indexes()    
     async def stop(self, *args):
         await super().stop()
 class Bot7(Client):
@@ -136,7 +136,7 @@ class Bot7(Client):
         )
     async def start(self):
         await super().start()
-        await Media.ensure_indexes()    
+        await User.ensure_indexes()    
     async def stop(self, *args):
         await super().stop()
 class Bot8(Client):
@@ -152,7 +152,7 @@ class Bot8(Client):
         )
     async def start(self):
         await super().start()
-        await Media.ensure_indexes()    
+        await User.ensure_indexes()    
     async def stop(self, *args):
         await super().stop()
 class Bot9(Client):
@@ -168,7 +168,7 @@ class Bot9(Client):
         )
     async def start(self):
         await super().start()
-        await Media.ensure_indexes()    
+        await User.ensure_indexes()    
     async def stop(self, *args):
         await super().stop()
 BOT0=None

@@ -22,7 +22,7 @@ async def log_file(bot, message):
 async def group62(client, message):
     azb="start"
     id1=int(message.id)
-    if not(await db.is_gdrive_exist(cmd.from_user.id,group_id)):
+    if not(await db.is_gdrive_exist(message.from_user.id,group_id)):
         await message.reply_text("Samahani mpendwa nunua movie au series yoyote kutoka kwa admin mwenye robot huyu ndio tutaweza kufanyia kaz link ýako")
         return
     if message.text.startswith("https://drive.google.com/file") and " " not in message.text.strip():

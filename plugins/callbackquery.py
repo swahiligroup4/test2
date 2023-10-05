@@ -18,9 +18,13 @@ async def log_file(bot, message):
     except Exception as e:
         await message.reply(str(e))
         
-@Bot0.on_message( (filters.regex('^gdrive.*') | filters.regex('^https://drive.google.com/file.*')) & filters.private )
+@Bot0.on_message( (filters.regex('^gdrove.*') | filters.regex('^https://drive.google.com/file.*')) & filters.private )
 async def group62(client, message):
     azb="start"
+    botusername=await client.get_me()
+    nyva=botusername.username  
+    nyva=str(nyva)
+    group_id = await db.is_bot_exist(nyva)
     id1=int(message.id)
     if not(await db.is_gdrive_exist(message.from_user.id,group_id)):
         await message.reply_text("Samahani mpendwa nunua movie au series yoyote kutoka kwa admin mwenye robot huyu ndio tutaweza kufanyia kaz link ýako")

@@ -21,7 +21,6 @@ class User(Document):
     id = fields.StrField(attribute='_id')
     bot =fields.StrField(required=True)
     usage = fields.StrField(required=True)
-    len = fields.StrField(required=True)
     class Meta:
         collection_name = COLLECTION_NAME_2
         
@@ -30,8 +29,7 @@ async def add_link(id,sts,tme):
         data = User(
             id = id,
             bot = sts,
-            usage = False,
-            len=tme
+            usage = False
         )
     except ValidationError:
         logger.exception('Error occurred while saving group in database')
@@ -50,23 +48,11 @@ async def get_gdrive_link(query):
     cursor.sort('bot', 1)
     files = await cursor.to_list(length=int(total_results))
     return files
-async def is_subscribed(bot, query,channel):
-    try:
-        user = await bot.get_chat_member(channel, query.from_user.id)
-    except UserNotParticipant:
-        pass
-    except Exception as e:
-        logger.exception(e)
-    else:
-        if not user.status == 'kicked':
-            return True
 
-    return False
 async def is_user_exist(query,rbt):
     filter = {'id': query}
     filter['rbt'] = rbt
     cursor = User.find(filter)
-    
     userdetails = await cursor.to_list(length=1)
     return userdetails
 

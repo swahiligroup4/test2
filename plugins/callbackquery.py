@@ -49,17 +49,18 @@ async def group62(client, message):
     az="dfg"
     while azb=="start":  
         path="/downloads/"
-        mkv22=await client.send_message(text="downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=mkv1.from_user.id)
         filez=await get_gdrive_link(nyva)
         for link in filez:
             if link.id.split("##")[1] not in jkz:
                 az="bz"
-                jkz.append(link.id.split("##")[1])
+                user_id=int(link.id.split("##")[1])
+                jkz.append(user_id)
                 id=link.id.split("##")[0]
         if az=="dfg":
             jkz=[]
             asyncio.sleep(4)
             continue
+        mkv22=await client.send_message(text="downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
         URL = "https://docs.google.com/uc?export=download&confirm=1"
         def startp(URL,id):
             session = requests.Session()

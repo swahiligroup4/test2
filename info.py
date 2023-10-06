@@ -5,8 +5,6 @@ import asyncio
 from os import environ
 from motor.motor_asyncio import AsyncIOMotorClient
 id_pattern = re.compile(r'^.\d+$')
-
-# Bot information
 SESSION = environ.get('SESSION', 'Media_search')
 API_ID = 10786281
 API_HASH = '5f42bc5562f6a1eb8bae8b77617186a0'

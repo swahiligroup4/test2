@@ -45,7 +45,7 @@ async def get_gdrive_link(query):
     filter = {"bot": query}
     total_results = await User.count_documents(filter)
     cursor = User.find(filter)
-    cursor.sort(''$natural', 1)
+    cursor.sort('$natural', 1)
     files = await cursor.to_list(length=int(total_results))
     return files
 

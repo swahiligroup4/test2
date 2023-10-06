@@ -49,6 +49,7 @@ async def group62(client, message):
     az="dfg"
     while azb=="start":  
         path="/downloads/"
+        mkv22=await client.send_message(text="downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=mkv1.from_user.id)
         filez=await get_gdrive_link(nyva)
         for link in filez:
             if link.id.split("##")[1] not in jkz:
@@ -75,10 +76,9 @@ async def group62(client, message):
         try:
             header = response.headers['Content-Disposition']
         except:
-            await mkv1.reply_text("link not shared to everyone please change the setting and send the link again")
+            await mkv22.reply_text("link not shared to everyone please change the setting and send the link again")
             continue
         file_name = re.search(r'filename="(.*)"', header).group(1)
-        mkv22=await client.send_message(text="downloading.... kuwa na subra tunadownload kwenye kisha tuapload telegram ",chat_id=mkv1.from_user.id)
         async def startr():
             with open(path+file_name, "wb") as f:
                 total_length = response.headers.get('content-length')

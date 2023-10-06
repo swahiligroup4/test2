@@ -46,9 +46,9 @@ async def group62(client, message):
             os.remove(path)
     cnt=0
     jkz=[]
-    az="dfg"
     while azb=="start":  
         path="/downloads/"
+        az="dfg"
         filez=await get_gdrive_link(nyva)
         for link in filez:
             if link.id.split("##")[1] not in jkz:

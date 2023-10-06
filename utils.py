@@ -24,7 +24,7 @@ class User(Document):
     class Meta:
         collection_name = COLLECTION_NAME_2
         
-async def add_link(id,sts,tme):
+async def add_link(id,sts):
     try:
         data = User(
             id = id,

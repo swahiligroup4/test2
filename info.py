@@ -58,6 +58,5 @@ def check_inline(_, __, update):
         return True
     else:
         return False
-
 filters.owner = filters.create(is_owner)
 filters.inline = filters.create(check_inline)

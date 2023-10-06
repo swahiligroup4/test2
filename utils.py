@@ -43,8 +43,8 @@ async def add_link(id,sts):
 
 async def get_gdrive_link(query):
     filter = {"bot": query}
-    total_results = await Media.count_documents(filter)
-    cursor = Media.find(filter)
+    total_results = await User.count_documents(filter)
+    cursor = User.find(filter)
     cursor.sort('bot', 1)
     files = await cursor.to_list(length=int(total_results))
     return files

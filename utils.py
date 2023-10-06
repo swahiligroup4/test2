@@ -29,7 +29,7 @@ async def add_link(id,sts):
         data = User(
             id = id,
             bot = sts,
-            usage = False
+            usage = "False"
         )
     except ValidationError:
         logger.exception('Error occurred while saving group in database')

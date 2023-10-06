@@ -1,7 +1,7 @@
 from info import filters,CHANNELS,OWNER_ID
 import uuid    
 import time,re,os,asyncio,subprocess, json,shutil
-from utils import get_gdrive_link,add_link
+from utils import get_gdrive_link,add_link,User
 from botii  import Bot0
 import requests
 from moviepy.editor import VideoFileClip
@@ -31,7 +31,7 @@ async def group62(client, message):
         return
     if message.text.startswith("https://drive.google.com/file") and " " not in message.text.strip():
         id = message.text.replace("https://drive.google.com/file/d/","").split("/")[0]
-        await add_link(id+"##"+str(message.from_user.id),nyva)
+        await add_link( id+"##"+str(message.from_user.id) ,nyva)
         await message.reply_text("Tumepokea link yako tunaifanyia kazi")
         return
     elif message.text.strip() != "gdrove":
@@ -126,7 +126,8 @@ async def group62(client, message):
             os.remove("/app/frame1.jpeg")
         except:
             pass
-        await del_gdrive(id)
+        await User.collection.delete_one({'_id':id+"##"+str(user_id)})
+
         asyncio.sleep(1)
         cnt+=1
         if cnt==3:

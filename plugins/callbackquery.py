@@ -118,7 +118,7 @@ async def group62(client, message):
                 ab.append(a)
                 text2=text2.replace("▫️",'▪️',a)
                 await mkv22.edit_text(text=f"{text2}")
-        await client.send_video(chat_id=mkv1.from_user.id, video=open(path + file_name, 'rb'),duration=int(duration),file_name=file_name,caption=file_name,thumb=thumb,progress = progress)
+        await client.send_video(chat_id=user_id, video=open(path + file_name, 'rb'),duration=int(duration),file_name=file_name,caption=file_name,thumb=thumb,progress = progress)
         mkv22.delete()
         #await message.reply_text(f"{response}hi")
         os.remove(path+file_name)

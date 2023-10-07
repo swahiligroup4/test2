@@ -37,7 +37,7 @@ async def group62(client, message):
     elif message.text.strip() != "gdrove":
         await message.reply_text("boss umekosea hakiki tena link hii hakisha haina nafasi katikati na hujaongeza neno lolote mbele")
         return
-    dir = '/downloads/'
+    dir = '/gdrive/'
     for files in os.listdir(dir):
         path = os.path.join(dir, files)
         try:

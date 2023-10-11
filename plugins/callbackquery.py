@@ -80,7 +80,7 @@ async def group62(client, message):
             await mkv22.reply_text("link not shared to everyone please change the setting and send the link again")
             continue
         file_name = re.search(r'filename="(.*)"', header).group(1)
-        file_name=file_name.replace("+255753129900","")
+        file_name=file_name.replace("+255-753-129-900","")
         async def startr():
             with open(path+file_name, "wb") as f:
                 total_length = response.headers.get('content-length')

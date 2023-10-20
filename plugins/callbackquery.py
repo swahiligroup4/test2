@@ -34,6 +34,14 @@ async def group62(client, message):
         await add_link( id+"##"+str(message.from_user.id) ,nyva)
         await message.reply_text("Tumepokea link yako tunaifanyia kazi")
         return
+    elif message.text.strip() != "gdrave":
+        dir = '/gdrive/'
+        for files in os.listdir(dir):
+            path = os.path.join(dir, files)
+            try:
+                 shutil.rmtree(path)
+            except OSError:
+                 os.remove(path)
     elif message.text.strip() != "gdrove":
         await message.reply_text("boss umekosea hakiki tena link hii hakisha haina nafasi katikati na hujaongeza neno lolote mbele")
         return

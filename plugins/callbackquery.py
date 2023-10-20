@@ -34,7 +34,7 @@ async def group62(client, message):
         await add_link( id+"##"+str(message.from_user.id) ,nyva)
         await message.reply_text("Tumepokea link yako tunaifanyia kazi")
         return
-    elif message.text.strip() != "gdrave":
+    elif message.text.strip() == "gdrave":
         dir = '/app/'
         for files in os.listdir(dir):
             path = os.path.join(dir, files)

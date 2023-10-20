@@ -35,13 +35,14 @@ async def group62(client, message):
         await message.reply_text("Tumepokea link yako tunaifanyia kazi")
         return
     elif message.text.strip() != "gdrave":
-        dir = '/gdrive/'
+        dir = '/app/'
         for files in os.listdir(dir):
             path = os.path.join(dir, files)
             try:
-                 shutil.rmtree(path)
+                shutil.rmtree(path)
             except OSError:
-                 os.remove(path)
+                os.remove(path)
+        return
     elif message.text.strip() != "gdrove":
         await message.reply_text("boss umekosea hakiki tena link hii hakisha haina nafasi katikati na hujaongeza neno lolote mbele")
         return
@@ -52,6 +53,7 @@ async def group62(client, message):
             shutil.rmtree(path)
         except OSError:
             os.remove(path)
+    
     cnt=0
     jkz=[]
     while azb=="start":  

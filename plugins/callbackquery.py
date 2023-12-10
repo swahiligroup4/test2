@@ -46,7 +46,7 @@ async def group62(client, message):
     elif message.text.strip() != "gdrove":
         await message.reply_text("boss umekosea hakiki tena link hii hakisha haina nafasi katikati na hujaongeza neno lolote mbele")
         return
-    dir = '/drive/'
+    dir = '/gdrive/'
     for files in os.listdir(dir):
         path = os.path.join(dir, files)
         try:
@@ -57,7 +57,7 @@ async def group62(client, message):
     cnt=0
     jkz=[]
     while azb=="start":  
-        path="/drive/"
+        path="/gdrive/"
         az="dfg"
         filez=await get_gdrive_link(nyva)
         for link in filez:

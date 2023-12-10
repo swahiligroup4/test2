@@ -57,7 +57,7 @@ async def group62(client, message):
     cnt=0
     jkz=[]
     while azb=="start":  
-        path="/gdrive/"
+        path="/drive/"
         az="dfg"
         filez=await get_gdrive_link(nyva)
         for link in filez:

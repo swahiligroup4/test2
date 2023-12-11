@@ -171,11 +171,11 @@ class Bot9(Client):
         await User.ensure_indexes()    
     async def stop(self, *args):
         await super().stop()
-BOT0=Bot
+BOT0=None
 app=Bot()
 app.run()
-#for i in [Bot,Bot2]:
-    #Bot0=i
+for i in [Bot,Bot2]:
+    Bot0=i
 #async def main():
     #app=[Bot(),Bot2()]
     #await compose(app)

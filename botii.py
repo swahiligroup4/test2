@@ -15,7 +15,7 @@ class Bot(Client):
             name=SESSION ,
             api_id=API_ID,
             api_hash=API_HASH,
-            bot_token="6703433962:AAElJmoIXJZ2sIAv5Hd9rnF-vEnp788OFjc",
+            bot_token="6804053005:AAEbImtYGckSqTgAL_T557r46kBtCHxKl9Y",
             workers=50,
             plugins={"root": "plugins"},
             sleep_threshold=4,
@@ -171,9 +171,9 @@ class Bot9(Client):
         await User.ensure_indexes()    
     async def stop(self, *args):
         await super().stop()
-BOT0=None
-for i in [Bot,Bot2]:
-    Bot0=i
+BOT0=Bot
+#for i in [Bot,Bot2]:
+    #Bot0=i
 async def main():
     app=[Bot(),Bot2()]
     await compose(app)

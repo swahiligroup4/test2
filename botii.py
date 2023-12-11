@@ -172,6 +172,8 @@ class Bot9(Client):
     async def stop(self, *args):
         await super().stop()
 BOT0=Bot
+app=Bot()
+app.run()
 #for i in [Bot,Bot2]:
     #Bot0=i
 async def main():

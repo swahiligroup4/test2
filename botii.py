@@ -9,7 +9,7 @@ from pyrogram.raw.all import layer
 from utils import User
 from info import SESSION, API_ID, API_HASH, BOT_TOKEN
 
-class Bot(Client):
+class Bot0(Client):
     def __init__(self):
         super().__init__(
             name=SESSION ,
@@ -171,11 +171,10 @@ class Bot9(Client):
         await User.ensure_indexes()    
     async def stop(self, *args):
         await super().stop()
-BOT0=None
-app=Bot()
+app=Bot0()
 app.run()
-for i in [Bot,Bot2]:
-    Bot0=i
+#for i in [Bot,Bot2]:
+    #Bot0=i
 #async def main():
     #app=[Bot(),Bot2()]
     #await compose(app)

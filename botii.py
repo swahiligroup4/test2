@@ -176,6 +176,8 @@ app=Bot()
 app.run()
 #for i in [Bot,Bot2]:
     #Bot0=i
-async def main():
-    app=[Bot(),Bot2()]
-    await compose(app)
+#async def main():
+    #app=[Bot(),Bot2()]
+    #await compose(app)
+def main():
+    df="hi"

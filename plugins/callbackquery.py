@@ -87,7 +87,7 @@ async def group62(client, message):
         if 'signin' in response.url:
             await User.collection.delete_one({'_id':id+"##"+str(user_id)})
             asyncio.sleep(120)
-            await mkv22.reply_text("link not shared to everyone please change the setting and send the link again")
+            await mkv22.reply_text("Tafadhal kabadilishe hii link iwe iwe shared to everyone kisha itume tena kama huelew muulize @hrm45")
             continue
         try:
             header = response.headers['Content-Disposition']

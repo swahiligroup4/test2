@@ -84,7 +84,7 @@ async def group62(client, message):
                 response = session.get(URL, params=params, stream=True)
             return response
         response = startp(URL,id)
-        print(f"{response.url}")
+        await mkv22.reply_text(f"{response.url}")
         if 'ServiceLogin' in response.url:
             print("hi")
         try:

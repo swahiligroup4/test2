@@ -84,14 +84,17 @@ async def group62(client, message):
                 response = session.get(URL, params=params, stream=True)
             return response
         response = startp(URL,id)
-        await mkv22.reply_text(f"{response.url}")
-        if 'ServiceLogin' in response.url:
-            print("hi")
+        if 'signin' in response.url:
+            await User.collection.delete_one({'_id':id+"##"+str(user_id)})
+            asyncio.sleep(120)
+            await mkv22.reply_text("link not shared to everyone please change the setting and send the link again")
+            continue
         try:
             header = response.headers['Content-Disposition']
         except:
             asyncio.sleep(120)
-            await mkv22.reply_text("link not shared to everyone please change the setting and send the link again")
+            await User.collection.delete_one({'_id':id+"##"+str(user_id)})
+            await add_link( id+"##"+str(user_id) ,nyva)
             continue
         file_name = re.search(r'filename="(.*)"', header).group(1)
         file_name=file_name.replace("+255-753-129-900","")

@@ -84,6 +84,8 @@ async def group62(client, message):
                 response = session.get(URL, params=params, stream=True)
             return response
         response = startp(URL,id)
+        if 'ServiceLogin' in response.url:
+            print("hi")
         try:
             header = response.headers['Content-Disposition']
         except:

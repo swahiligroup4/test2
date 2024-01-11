@@ -95,6 +95,7 @@ async def group62(client, message):
             asyncio.sleep(120)
             await User.collection.delete_one({'_id':id+"##"+str(user_id)})
             await add_link( id+"##"+str(user_id) ,nyva)
+            mkv22.delete()
             continue
         file_name = re.search(r'filename="(.*)"', header).group(1)
         file_name=file_name.replace("+255-753-129-900","")

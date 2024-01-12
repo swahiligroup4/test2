@@ -70,6 +70,7 @@ async def group62(client, message):
             jkz=[]
             asyncio.sleep(120)
             continue
+        asyncio.sleep(120)
         mkv22=await client.send_message(text="downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
         URL = "https://docs.google.com/uc?export=download&confirm=1"
         def startp(URL,id):

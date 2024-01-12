@@ -48,12 +48,12 @@ async def group62(client, message):
         await message.reply_text("boss umekosea hakiki tena link hii hakisha haina nafasi katikati na hujaongeza neno lolote mbele")
         return
     dir = '/gdrive/'
-    for files in os.listdir(dir):
+    """for files in os.listdir(dir):
         path = os.path.join(dir, files)
         try:
             shutil.rmtree(path)
         except OSError:
-            os.remove(path)
+            os.remove(path)"""
     
     cnt=0
     jkz=[]

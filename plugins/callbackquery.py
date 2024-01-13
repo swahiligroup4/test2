@@ -68,7 +68,6 @@ async def group62(client, message):
                 id=link.id.split("##")[0]
                 break
         ##await client.send_message(text=f"{az}downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
-        gdown.download(id=id, output="/gdrive/Gudda.S01E736.Vasco.DJ.avi", quiet=False)
         if az=="dfg":
             jkz=[]
             await asyncio.sleep(15)
@@ -147,7 +146,8 @@ async def group62(client, message):
         await client.send_video(chat_id=user_id, video=open(path + file_name, 'rb'),duration=int(duration),file_name=file_name,caption=file_name,thumb=thumb,progress = progress)
         await mkv22.delete()
         #await message.reply_text(f"{response}hi")
-        os.remove(path+file_name)
+        gdown.download(id=id, output= path+file_name, quiet=False)
+        #os.remove(path+file_name)
         try:
             os.remove("/app/frame1.jpeg")
         except:

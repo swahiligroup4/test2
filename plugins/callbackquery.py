@@ -86,7 +86,6 @@ async def group62(client, message):
                 response = session.get(URL, params=params, stream=True)
             return response
         response = startp(URL,id)
-        await client.send_message(text=f"{response.url}",chat_id=user_id)
         
         if 'signin' in response.url:
             await User.collection.delete_one({'_id':id+"##"+str(user_id)})
@@ -95,8 +94,9 @@ async def group62(client, message):
             continue
         try:
             header = response.headers['Content-Disposition']
+            await client.send_message(text=f"{response.url}",chat_id=user_id)
         except:
-            await asyncio.sleep(60)
+            await asyncio.sleep(15)
             await mkv22.delete()
             continue
         file_name = re.search(r'filename="(.*)"', header).group(1)

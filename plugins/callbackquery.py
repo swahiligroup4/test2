@@ -94,7 +94,6 @@ async def group62(client, message):
             continue
         try:
             header = response.headers['Content-Disposition']
-            await client.send_message(text=f"{response.url}",chat_id=user_id)
         except Exception as e :
             e=f"{e}"
             if e =="'content-disposition'":

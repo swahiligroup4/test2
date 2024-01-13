@@ -54,25 +54,22 @@ async def group62(client, message):
             shutil.rmtree(path)
         except OSError:
             os.remove(path)
-    
-    cnt=0
     jkz=[]
     while azb=="start":  
         path="/gdrive/"
         az="dfg"
-        await client.send_message(text=f"test {jkz}{az} ",chat_id=859704527)
         filez=await get_gdrive_link(nyva)
         for link in filez:
-            if link.id.split("##")[1] not in jkz:
+            if int(link.id.split("##")[1]) not in jkz:
                 az="bz"
                 user_id=int(link.id.split("##")[1])
                 jkz.append(user_id)
                 id=link.id.split("##")[0]
         if az=="dfg":
             jkz=[]
-            await asyncio.sleep(30)
+            await asyncio.sleep(15)
             continue
-        mkv22=await client.send_message(text=f"{jkz}{az}downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
+        mkv22=await client.send_message(text=f"downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
         URL = "https://docs.google.com/uc?export=download&confirm=1"
         def startp(URL,id):
             session = requests.Session()
@@ -145,7 +142,4 @@ async def group62(client, message):
         except:
             pass
         await User.collection.delete_one({'_id':id+"##"+str(user_id)})
-        await asyncio.sleep(7)
-        cnt+=1
-        if cnt==3:
-            await asyncio.sleep(60)
+        await asyncio.sleep(5)

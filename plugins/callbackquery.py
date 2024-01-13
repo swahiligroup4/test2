@@ -71,7 +71,7 @@ async def group62(client, message):
             jkz=[]
             await asyncio.sleep(120)
             continue
-        mkv22=await client.send_message(text="downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
+        mkv22=await client.send_message(text=f"{jkz}{az}downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
         URL = "https://docs.google.com/uc?export=download&confirm=1"
         def startp(URL,id):
             session = requests.Session()
@@ -138,7 +138,7 @@ async def group62(client, message):
                 text2=text2.replace("▫️",'▪️',a)
                 await mkv22.edit_text(text=f"{text2}")
         await client.send_video(chat_id=user_id, video=open(path + file_name, 'rb'),duration=int(duration),file_name=file_name,caption=file_name,thumb=thumb,progress = progress)
-        mkv22.delete()
+        await mkv22.delete()
         #await message.reply_text(f"{response}hi")
         os.remove(path+file_name)
         try:
@@ -146,7 +146,6 @@ async def group62(client, message):
         except:
             pass
         await User.collection.delete_one({'_id':id+"##"+str(user_id)})
-
         await asyncio.sleep(1)
         cnt+=1
         if cnt==3:

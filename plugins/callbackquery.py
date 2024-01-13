@@ -114,7 +114,6 @@ async def group62(client, message):
                         f.write(data)
                         f.flush()
                         a = int(10 * dl / total_length)
-                        await asyncio.sleep(1)
                         text2=f"downloading [▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️]\nName:{file_name}\nkwenye computer yangu "
                         if a not in ab:
                             ab.append(a)

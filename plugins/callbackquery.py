@@ -95,8 +95,6 @@ async def group62(client, message):
             header = response.headers['Content-Disposition']
         except:
             await asyncio.sleep(120)
-            await User.collection.delete_one({'_id':id+"##"+str(user_id)})
-            await add_link( id+"##"+str(user_id) ,nyva)
             await mkv22.delete()
             continue
         file_name = re.search(r'filename="(.*)"', header).group(1)

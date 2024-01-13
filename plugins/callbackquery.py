@@ -98,6 +98,7 @@ async def group62(client, message):
         except Exception as e :
             e=f"{e}"
             if e =="'content-disposition'":
+                await mkv22.delete()
                 await User.collection.delete_one({'_id':id+"##"+str(user_id)})
                 await client.send_message(text=f"**hii link nmeshindwa kuidownload naomba ujaribu kwa robot mwingine** https://drive.google.com/file/d/{id}/view?usp=drivesdk",chat_id=user_id) 
                 continue

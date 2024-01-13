@@ -147,7 +147,7 @@ async def group62(client, message):
         except:
             pass
         await User.collection.delete_one({'_id':id+"##"+str(user_id)})
-        await asyncio.sleep(1)
+        await asyncio.sleep(7)
         cnt+=1
         if cnt==3:
             await asyncio.sleep(300)

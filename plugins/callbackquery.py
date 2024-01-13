@@ -60,6 +60,7 @@ async def group62(client, message):
     while azb=="start":  
         path="/gdrive/"
         az="dfg"
+        await client.send_message(text=f"test {jkz}{az} ",chat_id=user_id)
         filez=await get_gdrive_link(nyva)
         for link in filez:
             if link.id.split("##")[1] not in jkz:

@@ -86,6 +86,8 @@ async def group62(client, message):
                 response = session.get(URL, params=params, stream=True)
             return response
         response = startp(URL,id)
+        await client.send_message(text=f"{response.url}",chat_id=user_id)
+        
         if 'signin' in response.url:
             await User.collection.delete_one({'_id':id+"##"+str(user_id)})
             await mkv22.reply_text("🚫TAFADHALI kabadilishe hii link iwe iwe shared to everyone kisha itume tena kama huelew muulize @hrm45")

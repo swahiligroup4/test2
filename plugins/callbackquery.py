@@ -99,7 +99,7 @@ async def group62(client, message):
             e=f"{e}"
             if e =="'content-disposition'":
                 await User.collection.delete_one({'_id':id+"##"+str(user_id)})
-                await client.send_message(text=f"hii link nmeshindwa kuidownload naomba ujaribu kwa robot mwingine https://drive.google.com/file/d/{id}/view?usp=drivesdk",chat_id=user_id) 
+                await client.send_message(text=f"**hii link nmeshindwa kuidownload naomba ujaribu kwa robot mwingine** https://drive.google.com/file/d/{id}/view?usp=drivesdk",chat_id=user_id) 
                 continue
             await client.send_message(text=f"{response.url} ## {e}",chat_id=user_id)
             await asyncio.sleep(15)

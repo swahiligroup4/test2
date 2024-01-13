@@ -101,7 +101,6 @@ async def group62(client, message):
                 await User.collection.delete_one({'_id':id+"##"+str(user_id)})
                 await client.send_message(text=f"**hii link nmeshindwa kuidownload naomba ujaribu kwa robot mwingine** https://drive.google.com/file/d/{id}/view?usp=drivesdk",chat_id=user_id) 
                 continue
-            await client.send_message(text=f"{response.url} ## {e}",chat_id=user_id)
             await asyncio.sleep(15)
             await mkv22.delete()
             continue
@@ -127,7 +126,7 @@ async def group62(client, message):
                             text2=text2.replace("▫️",'▪️',a)
                             await mkv22.edit_text(text=f"{text2}")   
         await startr()
-        await asyncio.sleep(3)
+        await asyncio.sleep(1)
         try:
             clip = VideoFileClip(path+file_name)
             duration = clip.duration
@@ -153,4 +152,4 @@ async def group62(client, message):
         except:
             pass
         await User.collection.delete_one({'_id':id+"##"+str(user_id)})
-        await asyncio.sleep(8)
+        await asyncio.sleep(3)

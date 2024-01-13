@@ -65,6 +65,7 @@ async def group62(client, message):
                 user_id=int(link.id.split("##")[1])
                 jkz.append(user_id)
                 id=link.id.split("##")[0]
+                break
         if az=="dfg":
             jkz=[]
             await asyncio.sleep(15)

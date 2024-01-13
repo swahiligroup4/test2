@@ -1,5 +1,6 @@
 from info import filters,CHANNELS,OWNER_ID
 import uuid    
+import gdown
 import asyncio 
 import time,re,os,subprocess, json,shutil
 from utils import get_gdrive_link,add_link,User
@@ -67,7 +68,7 @@ async def group62(client, message):
                 id=link.id.split("##")[0]
                 break
         ##await client.send_message(text=f"{az}downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
-        
+        gdown.download(id=id, output="/gdrive/adfg.mp4", quiet=False)
         if az=="dfg":
             jkz=[]
             await asyncio.sleep(15)

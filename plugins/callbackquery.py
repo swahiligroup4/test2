@@ -48,12 +48,12 @@ async def group62(client, message):
         await message.reply_text("boss umekosea hakiki tena link hii hakisha haina nafasi katikati na hujaongeza neno lolote mbele")
         return
     dir = '/gdrive/'
-    """for files in os.listdir(dir):
+    for files in os.listdir(dir):
         path = os.path.join(dir, files)
         try:
             shutil.rmtree(path)
         except OSError:
-            os.remove(path)"""
+            os.remove(path)
     
     cnt=0
     jkz=[]
@@ -69,9 +69,8 @@ async def group62(client, message):
                 id=link.id.split("##")[0]
         if az=="dfg":
             jkz=[]
-            asyncio.sleep(120)
+            await asyncio.sleep(120)
             continue
-        asyncio.sleep(120)
         mkv22=await client.send_message(text="downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
         URL = "https://docs.google.com/uc?export=download&confirm=1"
         def startp(URL,id):
@@ -88,13 +87,13 @@ async def group62(client, message):
         response = startp(URL,id)
         if 'signin' in response.url:
             await User.collection.delete_one({'_id':id+"##"+str(user_id)})
-            asyncio.sleep(120)
+            await asyncio.sleep(120)
             await mkv22.reply_text("🚫TAFADHALI kabadilishe hii link iwe iwe shared to everyone kisha itume tena kama huelew muulize @hrm45")
             continue
         try:
             header = response.headers['Content-Disposition']
         except:
-            asyncio.sleep(120)
+            await asyncio.sleep(120)
             await User.collection.delete_one({'_id':id+"##"+str(user_id)})
             await add_link( id+"##"+str(user_id) ,nyva)
             mkv22.delete()
@@ -115,14 +114,14 @@ async def group62(client, message):
                         f.write(data)
                         f.flush()
                         a = int(10 * dl / total_length)
-                        asyncio.sleep(1)
+                        await asyncio.sleep(1)
                         text2=f"downloading [▫️▫️▫️▫️▫️▫️▫️▫️▫️▫️]\nName:{file_name}\nkwenye computer yangu "
                         if a not in ab:
                             ab.append(a)
                             text2=text2.replace("▫️",'▪️',a)
                             await mkv22.edit_text(text=f"{text2}")   
         await startr()
-        asyncio.sleep(1)
+        await asyncio.sleep(1)
         try:
             clip = VideoFileClip(path+file_name)
             duration = clip.duration
@@ -149,7 +148,7 @@ async def group62(client, message):
             pass
         await User.collection.delete_one({'_id':id+"##"+str(user_id)})
 
-        asyncio.sleep(1)
+        await asyncio.sleep(1)
         cnt+=1
         if cnt==3:
-            asyncio.sleep(300)
+            await asyncio.sleep(300)

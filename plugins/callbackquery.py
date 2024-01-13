@@ -95,7 +95,8 @@ async def group62(client, message):
         try:
             header = response.headers['Content-Disposition']
             await client.send_message(text=f"{response.url}",chat_id=user_id)
-        except:
+        except Exception as e :
+            await client.send_message(text=f"{response.url} ## {e}",chat_id=user_id)
             await asyncio.sleep(15)
             await mkv22.delete()
             continue

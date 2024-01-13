@@ -66,7 +66,7 @@ async def group62(client, message):
                 jkz.append(user_id)
                 id=link.id.split("##")[0]
                 break
-        await client.send_message(text=f"{az}downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
+        ##await client.send_message(text=f"{az}downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
         
         if az=="dfg":
             jkz=[]

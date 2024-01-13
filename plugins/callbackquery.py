@@ -88,8 +88,8 @@ async def group62(client, message):
         response = startp(URL,id)
         if 'signin' in response.url:
             await User.collection.delete_one({'_id':id+"##"+str(user_id)})
-            await asyncio.sleep(120)
             await mkv22.reply_text("🚫TAFADHALI kabadilishe hii link iwe iwe shared to everyone kisha itume tena kama huelew muulize @hrm45")
+            await asyncio.sleep(60)
             continue
         try:
             header = response.headers['Content-Disposition']
@@ -119,7 +119,7 @@ async def group62(client, message):
                             text2=text2.replace("▫️",'▪️',a)
                             await mkv22.edit_text(text=f"{text2}")   
         await startr()
-        await asyncio.sleep(1)
+        await asyncio.sleep(3)
         try:
             clip = VideoFileClip(path+file_name)
             duration = clip.duration
@@ -148,4 +148,4 @@ async def group62(client, message):
         await asyncio.sleep(7)
         cnt+=1
         if cnt==3:
-            await asyncio.sleep(300)
+            await asyncio.sleep(60)

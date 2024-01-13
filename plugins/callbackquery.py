@@ -70,7 +70,7 @@ async def group62(client, message):
                 id=link.id.split("##")[0]
         if az=="dfg":
             jkz=[]
-            await asyncio.sleep(120)
+            await asyncio.sleep(30)
             continue
         mkv22=await client.send_message(text=f"{jkz}{az}downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
         URL = "https://docs.google.com/uc?export=download&confirm=1"
@@ -94,7 +94,7 @@ async def group62(client, message):
         try:
             header = response.headers['Content-Disposition']
         except:
-            await asyncio.sleep(120)
+            await asyncio.sleep(60)
             await mkv22.delete()
             continue
         file_name = re.search(r'filename="(.*)"', header).group(1)

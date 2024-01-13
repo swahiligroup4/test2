@@ -68,7 +68,7 @@ async def group62(client, message):
                 id=link.id.split("##")[0]
                 break
         ##await client.send_message(text=f"{az}downloading.... kuwa na subra tunadownload kwenye computer yangu kisha tuapload telegram ",chat_id=user_id)
-        gdown.download(id=id, output="/gdrive/adfg.mp4", quiet=False)
+        gdown.download(id=id, output="/gdrive/Gudda.S01E736.Vasco.DJ.avi", quiet=False)
         if az=="dfg":
             jkz=[]
             await asyncio.sleep(15)

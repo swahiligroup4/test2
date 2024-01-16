@@ -1,6 +1,5 @@
 from info import filters,CHANNELS,OWNER_ID
-import uuid    
-import gdown
+import uuid  
 import asyncio 
 import time,re,os,subprocess, json,shutil
 from utils import get_gdrive_link,add_link,User
@@ -145,9 +144,7 @@ async def group62(client, message):
                 await mkv22.edit_text(text=f"{text2}")
         await client.send_video(chat_id=user_id, video=open(path + file_name, 'rb'),duration=int(duration),file_name=file_name,caption=file_name,thumb=thumb,progress = progress)
         await mkv22.delete()
-        #await message.reply_text(f"{response}hi")
-        gdown.download(id=id, output= path+file_name, quiet=False)
-        #os.remove(path+file_name)
+        os.remove(path+file_name)
         try:
             os.remove("/app/frame1.jpeg")
         except:

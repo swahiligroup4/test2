@@ -146,7 +146,7 @@ async def group62(client, message):
         await mkv22.delete()
         os.remove(path+file_name)
         try:
-            os.remove("/app/frame1.jpeg")
+            os.remove("/gdrive/frame1.jpeg")
         except:
             pass
         await User.collection.delete_one({'_id':id+"##"+str(user_id)})

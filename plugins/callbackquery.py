@@ -130,7 +130,7 @@ async def group62(client, message):
             clip = VideoFileClip(path+file_name)
             duration = clip.duration
             clip.save_frame("/app/frame1.jpeg",t=(int(duration))/2)
-            thumb="/app/frame1.jpeg"
+            thumb="/gdrive/frame1.jpeg"
         except:
             duration = 0
             thumb = None
